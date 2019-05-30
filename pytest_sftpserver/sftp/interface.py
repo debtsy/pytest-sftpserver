@@ -45,7 +45,7 @@ class VirtualSFTPHandle(SFTPHandle):
         if self.content_provider.get(self.path) is None:
             return SFTP_NO_SUCH_FILE
 
-        return str(self.content_provider.get(self.path))[offset:offset + length]
+        return self.content_provider.get(self.path)[offset:offset + length]
 
     def stat(self):
         if self.content_provider.get(self.path) is None:
